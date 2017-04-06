@@ -84,3 +84,47 @@ This endpoint creates an item.
 ### HTTP Request
 
 `POST /api/v1/items`
+
+## Update an item
+
+> Request Format
+
+```json
+{ "item": 
+  {
+  "name": 390,
+  "description": 3,
+  "sale_tax": 3,
+  "vat": "",
+  "typ": "multi" or "item", 
+  "price": 50,
+  "status": pending/complete/online
+  "parent_id": 2 <-- parent_id is required if current item is subcategory
+  }
+"outlet_id": 1
+}
+```
+
+This endpoint updates an item.
+
+### HTTP Request
+
+`PUT /api/v1/items/:id`
+
+
+# Orders
+
+## Get All Orders for a outlet
+> Request Format
+
+```json
+NOT REQUIRED
+```
+
+### HTTP REQUEST
+`GET /api/v1/orders?outlet_id=3`
+
+## Create an Order
+
+
+## Update an order
