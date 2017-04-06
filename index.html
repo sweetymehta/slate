@@ -292,6 +292,48 @@
 
 <p><code class="prettyprint">POST /api/v1/items</code></p>
 
+<h2 id="update-an-item">Update an item</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> 
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sale_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multi"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> 
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="err">pending/complete/online</span><span class="w">
+  </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">parent_id</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">current</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">subcategory</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint updates an item.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PUT /api/v1/items/:id</code></p>
+
+<h1 id="orders">Orders</h1>
+
+<h2 id="get-all-orders-for-a-outlet">Get All Orders for a outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/orders?outlet_id=3</code></p>
+
+<h2 id="create-an-order">Create an Order</h2>
+
+<h2 id="update-an-order">Update an order</h2>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
