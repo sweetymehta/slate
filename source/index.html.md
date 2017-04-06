@@ -125,6 +125,57 @@ NOT REQUIRED
 `GET /api/v1/orders?outlet_id=3`
 
 ## Create an Order
+> Request Format
+
+```json
+{
+  "order": {
+  "total_amt": 4602.0,
+  "total_items": 3,
+  "items": [{
+  "productDeescription": [{
+  "displayName": "Size",
+  "displayValue": "12 Inch",
+  "id": 1,
+  "type": "ItemVariation",
+  "value": [3] // 3 is id of option taken from ingredient
+}, {
+"displayName": "Extras",
+"displayValue": "Premiuim Veg, Cheese",
+"id": 1,
+"type": "Customization",
+"value": [{"2": 2}, {"3": 1}] // 2,1 are ids of option taken from ingredient
+}],
+"name": "Choco Chip Muffin",
+"price": "190",
+"count": 2,
+"id": 3
+}, {
+"productDescription": [{
+"displayName": "Size",
+"displayValue": "12 Inch",
+"id": 12,
+"type": "ItemVariation",
+"value": ["7"]
+}, {
+"displayName": "Extras",
+"displayValue": "Premiuim Veg, Multigrain",
+"id": 3,
+"type": "Customization",
+"value": [{"7": 8}, {"9": 1}] // 8,1 are ids of option taken from ingredient
+}],
+"count": 1,
+"price": "200",
+"id": 5,
+"name": "Frosted Muffin"}]
+},         
+"outlet_id": 3
+}
+```
+
+### HTTP REQUEST
+
+`POST /api/v1/orders`
 
 
 ## Update an order
