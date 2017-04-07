@@ -345,6 +345,41 @@ NOT REQUIRED
 ### HTTP REQUEST
 `POST /api/v1/items/:item_id/customizations`
 
+## Update an customization
+> Request Format
+
+```json
+      { "customization": {
+          "name": "qwe",
+          "free": true,
+          "min": 3,
+          "max": 4,
+          "ingredients_attributes": [
+              {
+                  "id": "73",
+                  "name": "eew",
+                  "options": {"73": 458, "74": 56}
+              },       {
+                  "id": "74",
+                  "name": "543wwe",
+                  "options": {"73": 65, "74": 79}
+              }
+          ]
+      }
+      }
+```
+
+### HTTP REQUEST
+`PUT /api/v1/items/:item_id/customizations/:id`
+
+## Delete an customization
+> Request Format
+
+### HTTP REQUEST
+`DELETE /api/v1/items/:item_id/customizations/:id`
+
+
+
 
 
 
