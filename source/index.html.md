@@ -345,7 +345,7 @@ NOT REQUIRED
 ### HTTP REQUEST
 `POST /api/v1/items/:item_id/customizations`
 
-## Update an customization
+## Update an customizations
 > Request Format
 
 ```json
@@ -374,6 +374,10 @@ NOT REQUIRED
 
 ## Delete an customization
 > Request Format
+
+```json
+Not Required
+```
 
 ### HTTP REQUEST
 `DELETE /api/v1/items/:item_id/customizations/:id`
