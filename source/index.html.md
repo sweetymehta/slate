@@ -19,6 +19,8 @@ search: true
 
 # Authentication
 
+## SIGN IN
+
 > To authorize, use this api request:
 
 ```json
@@ -35,6 +37,27 @@ This endpoint do SignIn with user as manager.
 ### HTTP Request
 
 `POST /api/v1/users/sign_in`
+
+## Switch user via pin
+> Request Format
+
+```json
+  {"user": 
+      {"uname": "SL", "pin": "1235"}
+   }
+```
+
+### HTTP REQUEST
+`POST /api/v1/users/verify_pin`
+
+## Get all roles
+> Request Format
+
+```json
+ Not Required
+```
+### HTTP Request
+`GET /api/v1/users/roles?outlet_id=3`
 
 # Items
 
@@ -111,6 +134,59 @@ This endpoint updates an item.
 
 `PUT /api/v1/items/:id`
 
+# Outlets
+
+## Get All outlets for a organization
+> Request Format
+
+```json
+NOT REQUIRED
+```
+### HTTP REQUEST
+`GET api/v1/outlets?organization_id=1`
+
+## Create an outlet
+> Request Format
+
+```json
+    {"outlet": 
+      {
+         "name": "MCD", 
+         "address": "Sec 29",  
+         "typ": "outlet"  // typ can be multi or outlet
+      }
+    }
+```
+
+### HTTP REQUEST
+`POST api/v1/outlets`
+
+## Update an outlet
+> Request Format
+
+```json
+    {"outlet": 
+      {
+         "name": "MCD", 
+         "address": "Sec 29",  
+         "typ": "outlet"  // typ can be multi or outlet
+      }
+    }
+```
+
+### HTTP REQUEST
+`PUT api/v1/outlets/:id`
+
+## Delete an outlet
+> Request Format
+
+```json
+    Not required
+```
+
+### HTTP REQUEST
+`Delete api/v1/outlets/:id`
+
 
 # Orders
 
@@ -162,7 +238,7 @@ NOT REQUIRED
       "displayValue": "Premiuim Veg, Multigrain",
       "id": 3,
       "type": "Customization",
-      "value": [{"7": 8}, {"9": 1}] // 8,1 are ids of option taken from ingredient
+      "value": [{"7": 8}, {"9": 1}] // 8,1 are ids of option taken from ingredient`
   }],
 "count": 1,
 "price": "200",
@@ -179,3 +255,96 @@ NOT REQUIRED
 
 
 ## Update an order
+
+> Request Format
+
+```json
+ same as create
+```
+
+### HTTP REQUEST
+`PUT /api/v1/orders/:id`
+
+
+
+# Item Variation
+
+## Get All item_variations for an item
+> Request Format
+
+```json
+NOT REQUIRED
+```
+
+### HTTP REQUEST
+`GET /api/v1/items/:item_id/item_variations`
+
+## Create an item variation
+> Request Format
+
+```json
+  {"item_variation": {
+          "name": "size",
+          "min": 0,
+          "max": 1,
+          "default": "small",
+          "options_attributes": [
+            {"name": "small", "price": 20},
+            {"name": "medium", "price": 30},
+            {"name": "lrg", "price": 70}
+          ]
+      }
+  }
+```
+
+### HTTP REQUEST
+`POST /api/v1/items/:item_id/item_variations`
+
+## delete an item variation
+> Request Format
+
+```json
+NOT REQUIRED
+```
+
+### HTTP REQUEST
+`DELETE /api/v1/items/:item_id/item_variation/:id`
+
+# Customizations
+
+## GET customizations for an item
+```json
+NOT REQUIRED
+```
+
+### HTTP REQUEST
+`GET /api/v1/items/:item_id/customizations`
+
+## Create an customization
+> Request Format
+
+```json
+{ "customization": {
+          "name": "Toppings",
+          "free": false,
+          "min": 3,
+          "max": 4,
+          "ingredients_attributes": [
+              {
+                  "name": "mushroom",
+                  "options": {"3": 45, "4": 56}
+              },       {
+                  "name": "onion",
+                  "options": {"3": 65, "4": 79}
+              }
+          ]
+  }
+}
+```
+
+### HTTP REQUEST
+`POST /api/v1/items/:item_id/customizations`
+
+
+
+
