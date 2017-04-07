@@ -221,6 +221,8 @@
       <div class="content">
         <h1 id="authentication">Authentication</h1>
 
+<h2 id="sign-in">SIGN IN</h2>
+
 <blockquote>
 <p>To authorize, use this api request:</p>
 </blockquote>
@@ -235,6 +237,30 @@
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST /api/v1/users/sign_in</code></p>
+
+<h2 id="switch-user-via-pin">Switch user via pin</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
+      </span><span class="p">{</span><span class="s2">"uname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SL"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1235"</span><span class="p">}</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/users/verify_pin</code></p>
+
+<h2 id="get-all-roles">Get all roles</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">Not</span><span class="w"> </span><span class="err">Required</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/v1/users/roles?outlet_id=3</code></p>
 
 <h1 id="items">Items</h1>
 
@@ -317,6 +343,64 @@
 
 <p><code class="prettyprint">PUT /api/v1/items/:id</code></p>
 
+<h1 id="outlets">Outlets</h1>
+
+<h2 id="get-all-outlets-for-a-organization">Get All outlets for a organization</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET api/v1/outlets?organization_id=1</code></p>
+
+<h2 id="create-an-outlet">Create an outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
+         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
+         </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">typ</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">multi</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">outlet</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST api/v1/outlets</code></p>
+
+<h2 id="update-an-outlet">Update an outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> 
+      </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
+         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
+         </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">typ</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">multi</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">outlet</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT api/v1/outlets/:id</code></p>
+
+<h2 id="delete-an-outlet">Delete an outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="err">Not</span><span class="w"> </span><span class="err">required</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">Delete api/v1/outlets/:id</code></p>
+
 <h1 id="orders">Orders</h1>
 
 <h2 id="get-all-orders-for-a-outlet">Get All Orders for a outlet</h2>
@@ -369,7 +453,7 @@
       </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Premiuim Veg, Multigrain"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customization"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"7"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">"9"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">ids</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">ingredient</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"7"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">"9"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">ids</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">ingredient`</span><span class="w">
   </span><span class="p">}],</span><span class="w">
 </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
 </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
@@ -384,6 +468,96 @@
 <p><code class="prettyprint">POST /api/v1/orders</code></p>
 
 <h2 id="update-an-order">Update an order</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/orders/:id</code></p>
+
+<h1 id="item-variation">Item Variation</h1>
+
+<h2 id="get-all-item_variations-for-an-item">Get All item_variations for an item</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/items/:item_id/item_variations</code></p>
+
+<h2 id="create-an-item-variation">Create an item variation</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"item_variation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"options_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lrg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/items/:item_id/item_variations</code></p>
+
+<h2 id="delete-an-item-variation">delete an item variation</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">DELETE /api/v1/items/:item_id/item_variation/:id</code></p>
+
+<h1 id="customizations">Customizations</h1>
+
+<h2 id="get-customizations-for-an-item">GET customizations for an item</h2>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/items/:item_id/customizations</code></p>
+
+<h2 id="create-an-customization">Create an customization</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"customization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toppings"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mushroom"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onion"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/items/:item_id/customizations</code></p>
 
           <h1 id="errors">Errors</h1>
 
