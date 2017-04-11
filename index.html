@@ -598,6 +598,77 @@
 
 <p><code class="prettyprint">DELETE /api/v1/items/:item_id/customizations/:id</code></p>
 
+<h1 id="wallet">Wallet</h1>
+
+<h2 id="get-wallets-for-an-outlet">GET wallets for an outlet</h2>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<blockquote>
+<p>all wallets of outlet level</p>
+
+<h1 id="get-api-v1-wallets-outlet_id-3">GET /api/v1/wallets?outlet_id=3</h1>
+
+<p>all wallets of organization level</p>
+
+<h1 id="get-api-v1-wallets-organization_id-3">GET /api/v1/wallets?organization_id=3</h1>
+</blockquote>
+
+<h2 id="create-a-wallet">Create a wallet</h2>
+
+<blockquote>
+<p>Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization</p>
+
+<p>For Outlet</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> 
+  </span><span class="p">{</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">},</span><span class="w">
+   </span><span class="s2">"walletable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"walletable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outlet"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>For Organization</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> 
+  </span><span class="p">{</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">},</span><span class="w">
+   </span><span class="s2">"walletable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"walletable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<h1 id="post-api-v1-wallets">POST /api/v1/wallets</h1>
+
+<h2 id="update-a-wallet">Update a wallet</h2>
+
+<blockquote>
+<p>Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
+Operation allowed - set/inc/dec
+Manager/Owner can do set/inc/sec operation
+Customer can only do inc
+0 - set, 1 - inc, 2 - dec</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> 
+  </span><span class="p">{</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="err">kind</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<h1 id="put-api-v1-wallets-id">PUT /api/v1/wallets/:id</h1>
+
+<h2 id="delete-a-wallet">Delete a wallet</h2>
+
+<blockquote>
+<p>Only for outlet/organization</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">Not</span><span class="w"> </span><span class="err">Required</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<h1 id="delete-api-v1-wallets-id">DELETE /api/v1/wallets/:id</h1>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
