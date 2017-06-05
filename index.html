@@ -356,6 +356,12 @@
 
 <p><code class="prettyprint">GET api/v1/outlets?organization_id=1</code></p>
 
+<h2 id="get-sub-outlets-from-given-outlet">Get sub-outlets from given outlet</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET api/v1/consumer/outlets?outlet_id=2</code></p>
+
 <h2 id="create-an-outlet">Create an outlet</h2>
 
 <blockquote>
@@ -413,6 +419,19 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/orders?outlet_id=3</code></p>
+
+<h2 id="get-pre-order-details">Get Pre-Order details</h2>
+
+<blockquote>
+<p>Request Format
+<code class="prettyprint">json
+ Same as order create
+</code></p>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/orders/details</code></p>
+</blockquote>
 
 <h2 id="create-an-order">Create an Order</h2>
 
@@ -597,77 +616,6 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">DELETE /api/v1/items/:item_id/customizations/:id</code></p>
-
-<h1 id="wallet">Wallet</h1>
-
-<h2 id="get-wallets-for-an-outlet">GET wallets for an outlet</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>all wallets of outlet level and of organization level</p>
-</blockquote>
-
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">GET /api/v1/wallets?outlet_id=3 OR</code>GET /api/v1/wallets?organization_id=3`` </p>
-
-<h2 id="create-a-wallet">Create a wallet</h2>
-
-<blockquote>
-<p>Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization</p>
-
-<p>For Outlet</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">},</span><span class="w">
-   </span><span class="s2">"walletable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"walletable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outlet"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>For Organization</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">},</span><span class="w">
-   </span><span class="s2">"walletable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"walletable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">POST /api/v1/wallets</code></p>
-
-<h2 id="update-a-wallet">Update a wallet</h2>
-
-<blockquote>
-<p>Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
-Operation allowed - set/inc/dec
-Manager/Owner can do set/inc/sec operation
-Customer can only do inc
-0 - set, 1 - inc, 2 - dec</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="err">kind</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">PUT /api/v1/wallets/:id</code></p>
-
-<h2 id="delete-a-wallet">Delete a wallet</h2>
-
-<blockquote>
-<p>Only for outlet/organization</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">Not</span><span class="w"> </span><span class="err">Required</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">DELETE /api/v1/wallets/:id</code></p>
 
           <h1 id="errors">Errors</h1>
 
