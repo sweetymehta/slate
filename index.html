@@ -230,15 +230,13 @@
 <h2 id="login-verify-otp">Login - Verify OTP</h2>
 
 <blockquote>
-<p>REQUEST Format
-<code class="prettyprint">json
-  {
-    &quot;number&quot;: &quot;9990170198&quot;,
-    &quot;otp&quot;: &quot;1111&quot;,
-  }
-</code></p>
+<p>REQUEST Format</p>
 </blockquote>
-
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9990170198"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"otp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111"</span><span class="p">,</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">POST /api/v1/customers/verify</code></p>
@@ -288,6 +286,35 @@
 
 <p><code class="prettyprint">GET /api/v1/consumer/customers/send_otp?number=&quot;999999999&quot;</code></p>
 
+<h1 id="coupons">Coupons</h1>
+
+<h2 id="get-all-coupons">Get all coupons</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET api/v1/consumer/coupons?type=pack&amp;amount=100</code> // where type and amount are optional, type can be coupon/pack/nil</p>
+
+<h2 id="verify-coupon">verify coupon</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"coupon"</span><span class="p">:</span><span class="w">  </span><span class="p">[</span><span class="s2">"FIRST"</span><span class="p">],</span><span class="w">
+   </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">  </span><span class="err">#optional</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/v1/consumer/coupons/verify</code></p>
+
+<h2 id="get-coupon-detail">Get Coupon detail</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
 <h1 id="merchant-authentication">Merchant - Authentication</h1>
 
 <h2 id="sign-in">SIGN IN</h2>
