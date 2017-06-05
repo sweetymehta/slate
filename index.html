@@ -219,7 +219,76 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="authentication">Authentication</h1>
+        <h1 id="consumer-authentication">Consumer - Authentication</h1>
+
+<h2 id="login-generate-otp">Login - Generate OTP</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/consumer/customers/generate_otp?number=9990170198</code></p>
+
+<h2 id="login-verify-otp">Login - Verify OTP</h2>
+
+<blockquote>
+<p>REQUEST Format
+<code class="prettyprint">json
+  {
+    &quot;number&quot;: &quot;9990170198&quot;,
+    &quot;otp&quot;: &quot;1111&quot;,
+  }
+</code></p>
+</blockquote>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/customers/verify</code></p>
+
+<h2 id="signup-update-details-of-user">SignUp - Update Details of User</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"customer"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+     </span><span class="s2">"fb_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7jhygkogg98gvfgh2222"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="err">**OR**</span><span class="w">
+
+  </span><span class="p">{</span><span class="s2">"customer"</span><span class="p">:</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMEHTA"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"smehta@appstreet.io"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"birth_place"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HRY"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="update-number">Update Number</h2>
+
+<blockquote>
+<p>Request Format
+<code class="prettyprint">json
+ {
+  &quot;otp&quot;: &quot;&quot;,
+  &quot;number&quot;: &quot;999999999&quot;
+ }
+</code></p>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/consumer/customers/update_number</code></p>
+</blockquote>
+
+<h2 id="send-otp-after-number-update">send OTP after number update</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/consumer/customers/send_otp?number=&quot;999999999&quot;</code></p>
+
+<h1 id="merchant-authentication">Merchant - Authentication</h1>
 
 <h2 id="sign-in">SIGN IN</h2>
 
