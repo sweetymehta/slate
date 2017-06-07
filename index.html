@@ -219,7 +219,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="adminapp-actions">AdminApp - Actions</h1>
+        <h1 id="adminapp-user-actions">AdminApp - User Actions</h1>
 
 <h2 id="create-user-as-super-admin">Create User as Super Admin</h2>
 
@@ -261,6 +261,88 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">POST /api/v1/users</code></p>
+
+<h1 id="admin-app-organization">Admin App - Organization</h1>
+
+<h2 id="get-all-organization-acl-super_admin-admin-owner-will-have-list-concerned-to-him-her">Get All organization(ACL - super_admin, admin, owner(will have list concerned to him/her))</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/admin/organizations</code></p>
+
+<h2 id="create-an-organization-acl-super_admin-admin">Create an organization(ACL - super_admin, admin)</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> 
+  </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mcd.com"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/admin/organizations</code></p>
+
+<h1 id="admin-app-outlet">Admin App - Outlet</h1>
+
+<h2 id="get-all-outlets-for-an-organization-acl-super_admin-admin">Get All outlets for an organization (ACL - super_admin, admin)</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/admin/organizations/:org_id/outlets</code></p>
+
+<h2 id="create-an-outlet-for-an-organization-acl-super_admin-admin">Create an outlet for an organization(ACL - super_admin, admin)</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
+   </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"image_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/admin/organizations/:org_id/outlets</code></p>
+
+<h2 id="update-an-outlet-for-an-organization-acl-super_admin-admin">Update an outlet for an organization(ACL - super_admin, admin)</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
+   </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"image_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/admin/organizations/:org_id/outlets/:id</code></p>
+
+<h2 id="delete-an-outlet">Delete an outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">    </span><span class="err">Not</span><span class="w"> </span><span class="err">required</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">Delete /api/v1/admin/organizations/:org_id/outlets/:id</code></p>
 
 <h1 id="consumer-authentication">Consumer - Authentication</h1>
 
@@ -494,17 +576,6 @@
 
 <h1 id="outlets">Outlets</h1>
 
-<h2 id="get-all-outlets-for-a-organization">Get All outlets for a organization</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">GET api/v1/outlets?organization_id=1</code></p>
-
 <h2 id="get-sub-outlets-from-given-outlet">Get sub-outlets from given outlet</h2>
 
 <h3 id="http-request">HTTP REQUEST</h3>
@@ -527,34 +598,6 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">POST api/v1/outlets</code></p>
-
-<h2 id="update-an-outlet">Update an outlet</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> 
-      </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
-         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
-         </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">typ</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">multi</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">outlet</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">PUT api/v1/outlets/:id</code></p>
-
-<h2 id="delete-an-outlet">Delete an outlet</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">    </span><span class="err">Not</span><span class="w"> </span><span class="err">required</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">Delete api/v1/outlets/:id</code></p>
 
 <h1 id="orders">Orders</h1>
 
