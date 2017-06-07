@@ -221,7 +221,7 @@
       <div class="content">
         <h1 id="adminapp-user-actions">AdminApp - User Actions</h1>
 
-<h2 id="create-user-as-super-admin">Create User as Super Admin</h2>
+<h2 id="create-user-as-super-admin-admin">Create User as Super Admin/Admin</h2>
 
 <blockquote>
 <p>Request Format</p>
@@ -261,6 +261,30 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">POST /api/v1/users</code></p>
+
+<h2 id="update-user">Update User</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/users/:id</code></p>
+
+<h2 id="signin">SignIn</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
+ </span><span class="p">{</span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pos2@pos.com"</span><span class="p">,</span><span class="w"> </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/users/sign_in</code></p>
 
 <h1 id="admin-app-organization">Admin App - Organization</h1>
 
@@ -581,23 +605,6 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET api/v1/consumer/outlets?outlet_id=2</code></p>
-
-<h2 id="create-an-outlet">Create an outlet</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">    </span><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> 
-      </span><span class="p">{</span><span class="w">
-         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
-         </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
-         </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">typ</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">multi</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">outlet</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">POST api/v1/outlets</code></p>
 
 <h1 id="orders">Orders</h1>
 
