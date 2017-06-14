@@ -221,42 +221,41 @@
       <div class="content">
         <h1 id="adminapp-user-actions">AdminApp - User Actions</h1>
 
-<h2 id="create-user-as-super-admin-admin">Create User as Super Admin/Admin</h2>
+<h2 id="create-user-as-super-admin-will-create-users-with-different-roles-and-with-permissions">Create User as Super Admin - will create users with different roles and with permissions</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pos@pos.com"</span><span class="p">,</span><span class="w"> 
+  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pos1@pos.com"</span><span class="p">,</span><span class="w"> 
    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POS"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98919989890"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="err">/</span><span class="s2">"super_admin"</span><span class="w">
-   </span><span class="p">}</span><span class="w">
+   </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98989989890"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org_owner"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="s2">"permission_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"permission_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outlet"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"level_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">    
+              </span><span class="p">]</span><span class="w">
+   </span><span class="s2">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc_owner"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"roleable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"roleable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization"</span><span class="err">//</span><span class="s2">"Outlet"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Create Outlet"</span><span class="p">,</span><span class="s2">"Update Outlet"</span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc_owner"</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+       </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Create Outlet"</span><span class="p">,</span><span class="s2">"Update Outlet"</span><span class="p">]</span><span class="w">
+   </span><span class="p">}]</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Admin</span><span class="w"> </span><span class="err">User</span><span class="w">
-
-</span><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pos1@pos.com"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POS"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98919989891"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"manager"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Staff</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Manager</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">outlet</span><span class="w">
-
-</span><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pos4@pos.com"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POS"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98919989891"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cashier"</span><span class="p">,</span><span class="w">
-     </span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Staff</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">Cashier</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">outlet</span><span class="w">
+</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">email</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">uname</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
@@ -288,21 +287,20 @@
 
 <h1 id="admin-app-organization">Admin App - Organization</h1>
 
-<h2 id="get-all-organization-acl-super_admin-admin-owner-will-have-list-concerned-to-him-her">Get All organization(ACL - super_admin, admin, owner(will have list concerned to him/her))</h2>
+<h2 id="get-all-organization-permissions-to-super-admin">Get All organization - permissions to super admin</h2>
 
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/admin/organizations</code></p>
 
-<h2 id="create-an-organization-acl-super_admin-admin">Create an organization(ACL - super_admin, admin)</h2>
+<h2 id="create-an-organization-permissions-to-super-admin">Create an organization - permissions to super admin</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"organization"</span><span class="p">:</span><span class="w"> 
   </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mcd.com"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"owner_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+   </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mcd.com"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -312,7 +310,7 @@
 
 <h1 id="admin-app-outlet">Admin App - Outlet</h1>
 
-<h2 id="get-all-outlets-for-an-organization-acl-super_admin-admin">Get All outlets for an organization (ACL - super_admin, admin)</h2>
+<h2 id="get-all-outlets-for-an-organization-permissions-can-be-added">Get All outlets for an organization - permissions can be added</h2>
 
 <blockquote>
 <p>Request Format</p>
@@ -331,14 +329,14 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"outlet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCD"</span><span class="p">,</span><span class="w"> 
    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sec 29"</span><span class="p">,</span><span class="w">  
-   </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"outlet"</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">typ</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">multi</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">outlet</span><span class="w">
    </span><span class="s2">"image_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">POST /api/v1/admin/organizations/:org_id/outlets</code></p>
+<p><code class="prettyprint">POST /api/v1/admin/organizations/:organization_id/outlets</code></p>
 
 <h2 id="update-an-outlet-for-an-organization-acl-super_admin-admin">Update an outlet for an organization(ACL - super_admin, admin)</h2>
 
@@ -355,7 +353,7 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">PUT /api/v1/admin/organizations/:org_id/outlets/:id</code></p>
+<p><code class="prettyprint">PUT /api/v1/admin/organizations/:organization_id/outlets/:id</code></p>
 
 <h2 id="delete-an-outlet">Delete an outlet</h2>
 
@@ -366,7 +364,7 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">Delete /api/v1/admin/organizations/:org_id/outlets/:id</code></p>
+<p><code class="prettyprint">Delete /api/v1/admin/organizations/:organization_id/outlets/:id</code></p>
 
 <h1 id="adminapp-coupons">AdminApp - Coupons</h1>
 
@@ -396,7 +394,7 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">POST /api/v1/customers/verify</code></p>
+<p><code class="prettyprint">POST /api/v1/consumer/customers/verify</code></p>
 
 <h2 id="signup-update-details-of-user">SignUp - Update Details of User</h2>
 
@@ -421,6 +419,10 @@
    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/consumer/customers/sign_up</code></p>
+
 <h2 id="update-number">Update Number</h2>
 
 <blockquote>
@@ -495,35 +497,9 @@
     </span><span class="p">}</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint do SignIn with user as manager.</p>
-
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST /api/v1/users/sign_in</code></p>
-
-<h2 id="switch-user-via-pin">Switch user via pin</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
-      </span><span class="p">{</span><span class="s2">"uname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SL"</span><span class="p">,</span><span class="w"> </span><span class="s2">"pin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1235"</span><span class="p">}</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">POST /api/v1/users/verify_pin</code></p>
-
-<h2 id="get-all-roles">Get all roles</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">Not</span><span class="w"> </span><span class="err">Required</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET /api/v1/users/roles?outlet_id=3</code></p>
+<p><code class="prettyprint">POST /api/v1/admin/users/sign_in</code></p>
 
 <h1 id="items">Items</h1>
 
@@ -538,32 +514,15 @@
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET /api/v1/items?outlet_id=3</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>value</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>outlet_id</td>
-<td>id</td>
-<td>Get outlets by using index of outlets</td>
-</tr>
-</tbody></table>
+<p><code class="prettyprint">GET /api/v1/admin/outlets/:outlet_id/items</code></p>
 
 <h2 id="create-an-item">Create an item</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cake"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sale_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -571,40 +530,27 @@
   </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="err">pending/complete/online</span><span class="w">
   </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">parent_id</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">current</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">subcategory</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates an item.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST /api/v1/items</code></p>
+<p><code class="prettyprint">POST /api/v1/admin/outlets/:outlet_id/items</code></p>
 
 <h2 id="update-an-item">Update an item</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> 
-  </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="mi">390</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sale_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multi"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> 
-  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="err">pending/complete/online</span><span class="w">
-  </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">parent_id</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">current</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">subcategory</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
 </span></code></pre>
 <p>This endpoint updates an item.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT /api/v1/items/:id</code></p>
+<p><code class="prettyprint">PUT /api/v1/admin/outlets/:outlet_id/items/:id</code></p>
 
 <h1 id="consumer-app-outlets">Consumer App - Outlets</h1>
 
@@ -632,20 +578,8 @@
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">Same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">order</span><span class="w"> </span><span class="err">create</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">POST /api/v1/orders/details</code></p>
-
-<h2 id="create-an-order">Create an Order</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"total_amt"</span><span class="p">:</span><span class="w"> </span><span class="mf">4602.0</span><span class="p">,</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"total_items"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
     </span><span class="s2">"productDescription"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -659,13 +593,13 @@
       </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Premiuim Veg, Cheese"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customization"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="w"> </span><span class="err">ids</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">ingredients</span><span class="w">
-      </span><span class="p">}],</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choco Chip Muffin"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"190"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="err">//now</span><span class="w"> </span><span class="err">item_variation</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">willcome</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">ItemVariation</span><span class="w"> </span><span class="err">old</span><span class="p">[{</span><span class="s2">"2"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">ids</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">ingredient</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choco Chip Muffin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"190"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"productDescription"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
       </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Size"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 Inch"</span><span class="p">,</span><span class="w">
@@ -673,19 +607,72 @@
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ItemVariation"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"7"</span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extras"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Premiuim Veg, Multigrain"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customization"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="w">
-  </span><span class="p">}],</span><span class="w">
-</span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frosted Muffin"</span><span class="p">}]</span><span class="w">
-</span><span class="p">},</span><span class="w">         
-</span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extras"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Premiuim Veg, Multigrain"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customization"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span><span class="w"> </span><span class="err">//old</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="p">[{</span><span class="s2">"7"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">"9"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">ids</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">ingredient</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frosted Muffin"</span><span class="p">}]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/orders/details</code></p>
+
+<h2 id="create-an-order">Create an Order</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"total_amt"</span><span class="p">:</span><span class="w"> </span><span class="mf">4602.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_items"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"productDescription"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Size"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 Inch"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ItemVariation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">ingredient</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extras"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Premiuim Veg, Cheese"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customization"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="err">//now</span><span class="w"> </span><span class="err">item_variation</span><span class="w"> </span><span class="err">option</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">come</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">type</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">ItemVariation</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="w">  </span><span class="err">are</span><span class="w"> </span><span class="err">ingredients</span><span class="w"> </span><span class="err">ids..</span><span class="w">
+      </span><span class="p">}],</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choco Chip Muffin"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"190"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"productDescription"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Size"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 Inch"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ItemVariation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"7"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extras"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"displayValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Premiuim Veg, Multigrain"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customization"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">ingredients</span><span class="w"> </span><span class="err">ids..</span><span class="w">
+          </span><span class="p">}],</span><span class="w">
+          </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frosted Muffin"</span><span class="p">}]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
@@ -713,7 +700,7 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">GET /api/v1/items/:item_id/item_variations</code></p>
+<p><code class="prettyprint">GET /api/v1/admin/items/:item_id/item_variations</code></p>
 
 <h2 id="create-an-item-variation">Create an item variation</h2>
 
@@ -721,21 +708,32 @@
 <p>Request Format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"item_variation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"options_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lrg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"options_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lrg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">POST /api/v1/items/:item_id/item_variations</code></p>
+<p><code class="prettyprint">POST /api/v1/admin/items/:item_id/item_variations</code></p>
+
+<h2 id="update-an-item-variation">Update an item variation</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/admin/items/:item_id/item_variations/:id</code></p>
 
 <h2 id="delete-an-item-variation">delete an item variation</h2>
 
@@ -746,7 +744,7 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">DELETE /api/v1/items/:item_id/item_variation/:id</code></p>
+<p><code class="prettyprint">DELETE /api/v1/admin/items/:item_id/item_variation/:id</code></p>
 
 <h1 id="customizations">Customizations</h1>
 
@@ -755,7 +753,7 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">GET /api/v1/items/:item_id/customizations</code></p>
+<p><code class="prettyprint">GET /api/v1/admin/items/:item_id/customizations</code></p>
 
 <h2 id="create-an-customization">Create an customization</h2>
 
@@ -763,53 +761,53 @@
 <p>Request Format</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"customization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toppings"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mushroom"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
-                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onion"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toppings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mushroom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">560</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">variation's</span><span class="w"> </span><span class="err">options</span><span class="w">
+        </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onion"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">650</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">790</span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">POST /api/v1/items/:item_id/customizations</code></p>
+<p><code class="prettyprint">POST /api/v1/admin/items/:item_id/customizations</code></p>
 
 <h2 id="update-an-customizations">Update an customizations</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="s2">"customization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qwe"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-              </span><span class="p">{</span><span class="w">
-                  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eew"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"73"</span><span class="p">:</span><span class="w"> </span><span class="mi">458</span><span class="p">,</span><span class="w"> </span><span class="s2">"74"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">}</span><span class="w">
-              </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
-                  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543wwe"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"73"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="s2">"74"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
-              </span><span class="p">}</span><span class="w">
-          </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"customization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qwe"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eew"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"73"</span><span class="p">:</span><span class="w"> </span><span class="mi">458</span><span class="p">,</span><span class="w"> </span><span class="s2">"74"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543wwe"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"73"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="s2">"74"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">PUT /api/v1/items/:item_id/customizations/:id</code></p>
+<p><code class="prettyprint">PUT /api/v1/admin/items/:item_id/customizations/:id</code></p>
 
 <h2 id="delete-an-customization">Delete an customization</h2>
 
@@ -820,7 +818,21 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">DELETE /api/v1/items/:item_id/customizations/:id</code></p>
+<p><code class="prettyprint">DELETE /api/v1/admin/items/:item_id/customizations/:id</code></p>
+
+<aside class="notice">
+ Merchant Headers/Admin Headers
+ 1. USER_ID
+ 2. AUTH_TOKEN
+ 3. CONTENT_TYPE
+ 4. APP_ID - pos_admin/pos_merchant
+ Customers Headers
+ 1. CUSTOMER_ID
+ 2. AUTH_TOKEN
+ 3. CONTENT_TYPE
+ 4. APP_ID - pos_consumer
+
+</aside>
 
           <h1 id="errors">Errors</h1>
 
