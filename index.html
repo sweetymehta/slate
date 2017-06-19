@@ -243,17 +243,6 @@
               </span><span class="s2">"level_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w">
               </span><span class="p">}</span><span class="w">    
               </span><span class="p">]</span><span class="w">
-   </span><span class="s2">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc_owner"</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"roleable_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"roleable_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization"</span><span class="err">//</span><span class="s2">"Outlet"</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Create Outlet"</span><span class="p">,</span><span class="s2">"Update Outlet"</span><span class="p">]</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fc_owner"</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"outlet_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Create Outlet"</span><span class="p">,</span><span class="s2">"Update Outlet"</span><span class="p">]</span><span class="w">
-   </span><span class="p">}]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">email</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">uname</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w">
 </span></code></pre>
@@ -819,6 +808,76 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">DELETE /api/v1/admin/items/:item_id/customizations/:id</code></p>
+
+<h1 id="admin-device-action">Admin - Device Action</h1>
+
+<h2 id="create-a-device-for-an-outlet">Create a device for an outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ip_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"198.1.2.121"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"platform"</span><span class="p">:</span><span class="w"> </span><span class="s2">"android"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"android andvanced"</span><span class="w">
+  </span><span class="p">}}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/admin/outlets/3/devices</code></p>
+
+<h2 id="update-an-outlet">Update an outlet</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/admin/outlets/3/devices/:id</code></p>
+
+<h2 id="delete-an-device">Delete an Device</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">DELETE /api/v1/admin/outlets/3/devices/:id</code></p>
+
+<h2 id="get-all-devices-for-an-outlet">get all  Devices for an outlet</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/admin/outlets/3/devices</code></p>
+
+<h1 id="merchant-device-action">Merchant - Device Action</h1>
+
+<h2 id="activate-a-device">Activate a device</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"device"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"short_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kmhcfo3nq2"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/merchant/activate_device</code></p>
+
+<h2 id="get-all-users-for-a-device">get all users for a device</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/merchant/outlets/3/devices/:id/users</code></p>
+
+<h2 id="get-configuration-for-a-device">get configuration for a device</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/merchant/outlets/3/devices/:id/configuration</code></p>
 
 <h1 id="headers">HEADERS</h1>
 
