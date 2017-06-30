@@ -667,16 +667,27 @@
 
 <p><code class="prettyprint">POST /api/v1/orders</code></p>
 
-<h2 id="update-an-order">Update an order</h2>
+<h2 id="get-order-history">Get order history</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">/api/v</span><span class="mi">1</span><span class="err">/consumer/orders/history?order_type=recharge</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">order_type</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">recharge/item_purchase/active_orders</span><span class="w"> </span><span class="err">&amp;page=</span><span class="mi">1</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">PUT /api/v1/orders/:id</code></p>
+
+<h2 id="change-status">change Status</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"inprocess"</span><span class="p">}}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/merchant/orders/7babd58e-5d8f-400e-870a-77e40ecfb1bf/change_status</code></p>
 
 <h1 id="merchant-admin-app-item-variation">Merchant/Admin App - Item Variation</h1>
 
