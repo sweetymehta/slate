@@ -513,12 +513,37 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cake"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sale_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="s2">"typ"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multi"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"item"</span><span class="p">,</span><span class="w"> 
-  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="err">pending/complete/online</span><span class="w">
+  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
   </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">parent_id</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">current</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">subcategory</span><span class="w">
+  </span><span class="s2">"taxable_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}]</span><span class="w">
+  </span><span class="s2">"use_from_parent"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"has_variation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">''</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"item_variation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"options_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">,</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"customizations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toppings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mushroom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onion"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="s2">"ce9251c2-5292-4df1-a182-8244220c2b4a"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -702,39 +727,6 @@
 
 <p><code class="prettyprint">GET /api/v1/admin/items/:item_id/item_variations</code></p>
 
-<h2 id="create-an-item-variation">Create an item variation</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"item_variation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"size"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"options_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lrg"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">70</span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">POST /api/v1/admin/items/:item_id/item_variations</code></p>
-
-<h2 id="update-an-item-variation">Update an item variation</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">same</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">create</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">PUT /api/v1/admin/items/:item_id/item_variations/:id</code></p>
-
 <h2 id="delete-an-item-variation">delete an item variation</h2>
 
 <blockquote>
@@ -754,60 +746,6 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/admin/items/:item_id/customizations</code></p>
-
-<h2 id="create-an-customization">Create an customization</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"customization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toppings"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mushroom"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">450</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">560</span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">taken</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">variation's</span><span class="w"> </span><span class="err">options</span><span class="w">
-        </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onion"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">650</span><span class="p">,</span><span class="w"> </span><span class="s2">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">790</span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
- </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">POST /api/v1/admin/items/:item_id/customizations</code></p>
-
-<h2 id="update-an-customizations">Update an customizations</h2>
-
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="s2">"customization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qwe"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"free"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"min"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"ingredients_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eew"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"73"</span><span class="p">:</span><span class="w"> </span><span class="mi">458</span><span class="p">,</span><span class="w"> </span><span class="s2">"74"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">}</span><span class="w">
-          </span><span class="p">},</span><span class="w">       </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"543wwe"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"73"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w"> </span><span class="s2">"74"</span><span class="p">:</span><span class="w"> </span><span class="mi">79</span><span class="p">}</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="http-request">HTTP REQUEST</h3>
-
-<p><code class="prettyprint">PUT /api/v1/admin/items/:item_id/customizations/:id</code></p>
 
 <h2 id="delete-an-customization">Delete an customization</h2>
 
